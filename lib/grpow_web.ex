@@ -58,6 +58,15 @@ defmodule GrpowWeb do
     end
   end
 
+  def mailer_view do
+    quote do
+      use Phoenix.View, root: "lib/grpow_web/templates",
+                        namespace: GrpowWeb
+
+      use Phoenix.HTML
+    end
+  end
+
   defp view_helpers do
     quote do
       # Use all HTML functionality (forms, tags, etc)

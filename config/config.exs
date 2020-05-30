@@ -28,7 +28,11 @@ config :phoenix, :json_library, Jason
 
 config :grpow, :pow,
   user: Grpow.Users.User,
-  repo: Grpow.Repo
+  repo: Grpow.Repo,
+  web_module: GrpowWeb,
+  extensions: [PowResetPassword],
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
+  mailer_backend: GrpowWeb.PowMailer
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
